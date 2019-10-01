@@ -1,4 +1,4 @@
-# YelpApplication Project in progress - Expected completion by December 2019
+# YelpApplication Project in progress - Expected completion by November 2019
 
 
 Business Case:  ARC (Aggie Restaurant Consulting) | Yelp Dataset
