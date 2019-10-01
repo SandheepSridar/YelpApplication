@@ -1,0 +1,16 @@
+﻿Sorry, there was a problem downloading some files from OneDrive. Please try again.
+
+yelp1.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160621&action=Download
+
+yelp2.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160626&action=Download
+
+yelp3.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160622&action=Download
+
+yelp4.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160623&action=Download
+
+yelp5_A.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160624&action=Download
+
+yelp5_B.txt - https://onedrive.live.com/?cid=24111eebc84f9090&id=24111EEBC84F9090%2160625&action=Download
+
+
+
