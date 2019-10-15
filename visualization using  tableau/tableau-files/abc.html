@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>ACG</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" th:href="@{css/bootstrap.css}"/>
+</head>
+<body class="overflow-auto">
+<div class="jumbotron text-center" >
+    <h1>Aggie Restaurant Consulting</h1>
+</div>
+<div class="container">
+    <h4>Get restaurants by Postal Code</h4>
+    <div class="row">
+        <form action="/api/businesses/business" th:action = "@{/api/businesses/business}" th:object="${business}"  method="GET">
+            <div class="row">
+                <div class="col">
+            <input type="text" name="zip" id="id1" th:value="${zip}" class="form-control" placeholder="Enter Zip"/>
+                </div>
+            <div class="col">
+                 <input type="submit" value="Submit"  class="btn btn-primary">
+            </div>
+            </div>
+        </form>
+</div>
+<br>
+    <br>
+    <h4>Find postal codes for opening a Restaurant</h4>
+    <div class = "row">
+    <form action="/api/businesses/businessByCategory" th:action = "@{/api/businesses/businessByCategory}" th:object="${businessCategory}"  method="GET">
+        <div class="row">
+            <div class="col">
+        <input type="text" name="category" id="id2" th:value="${category}" class="form-control" placeholder="Enter Category"/>
+            </div>
+            <div class="col">
+        <input type="text" name="city" id="id3" th:value="${city}" class="form-control" placeholder="Enter City"/>
+            </div>
+            <div class="col">
+        <input type="text" name="state" id="id4" th:value="${state}" class="form-control" placeholder="Enter State"/>
+            </div>
+            <div class="col">
+                <input type="submit" value="Submit"  class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+    <br>
+    <br>
+    <h4>Competition Analysis in a City</h4>
+    <div class = "row">
+        <form action="/api/businesses/categories/get" th:action = "@{/api/businesses/categories/get}" th:object="${businessCategories}"  method="GET">
+            <div class="row">
+                <div class="col">
+            <input type="text" name="zip" id="id5" th:value="${zip}" class="form-control" placeholder="Enter zip"/>
+                </div>
+                <div class="col">
+                    <input type="submit" value="Submit"  class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <h4>Compare two similar restaurants</h4>
+    <div class = "row">
+    <form action="/api/businesses/rating" th:action = "@{/api/businesses/rating}" th:object="${businessCategories}"  method="GET">
+        <div class="row">
+            <div class="col">
+        <input type="text" name="zip" id="id6" th:value="${zip}" class="form-control" placeholder="Enter Zip"/>
+            </div>
+            <div class="col">
+        <input type="text" name="category" id="id7" th:value="${category}" class="form-control" placeholder="Enter Category"/>
+            </div>
+            <div class="col">
+                <input type="submit" value="Submit"  class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+    <br>
+    <h4>Find different categories of restaurant in a city</h4>
+    <div class = "row">
+        <form action="/api/categories/businessCategory" th:action = "@{/api/categories/businessCategory}" th:object="${categories}"  method="GET">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="zip" id="id8" th:value="${zip}" class="form-control" placeholder="Enter Zip"/>
+                </div>
+                <div class="col">
+                    <input type="submit" value="Submit"  class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

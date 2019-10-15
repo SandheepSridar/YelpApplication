@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.0821.2225                               -->
+<workbook original-version='18.1' source-build='2019.3.0 (20193.19.0821.2225)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='yelp2' inline='true' name='federated.1qpepr41k3g6zo1coyiv90e72fgy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='yelp2' name='semistructpassivestore-direct.1fc5xtq0i8ouu411218791dujfed'>
+            <connection class='semistructpassivestore-direct' directory='C:/Users/Sandheep Sridar/OneDrive/Desktop/Fall 2019/Adv DBMS/project' filename='yelp2.json' password='' server=''>
+              <semistruct-schemas>
+                <semistruct-schema table='[yelp2.json]'>
+                  <map key='{root}' value='true' />
+                </semistruct-schema>
+              </semistruct-schemas>
+            </connection>
+          </named-connection>
+        </named-connections>
+        <relation connection='semistructpassivestore-direct.1fc5xtq0i8ouu411218791dujfed' name='yelp2.json' table='[yelp2.json]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Document Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Document Index (generated)]</local-name>
+            <parent-name>[yelp2.json]</parent-name>
+            <remote-alias>Document Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categories</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[categories]</local-name>
+            <parent-name>[yelp2.json]</parent-name>
+            <remote-alias>categories</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoryCount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[categoryCount]</local-name>
+            <parent-name>[yelp2.json]</parent-name>
+            <remote-alias>categoryCount</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' datatype='integer' name='[Document Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>Document Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Categories' datatype='string' name='[categories]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>categories</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Category Count' datatype='real' name='[categoryCount]' role='measure' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>categoryCount</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <folder name='Yelp2' role='dimensions'>
+        <folder-item name='[Document Index (generated)]' type='field' />
+        <folder-item name='[categories]' type='field' />
+      </folder>
+      <layout dim-ordering='alphabetic' dim-percentage='0.517857' measure-ordering='alphabetic' measure-percentage='0.482143' show-structure='false' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Number of restaurants based on category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='yelp2' name='federated.1qpepr41k3g6zo1coyiv90e72fgy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1qpepr41k3g6zo1coyiv90e72fgy'>
+            <column caption='Categories' datatype='string' name='[categories]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>categories</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Category Count' datatype='real' name='[categoryCount]' role='measure' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>categoryCount</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[categories]' derivation='None' name='[none:categories:nk]' pivot='key' type='nominal' />
+            <column-instance column='[categoryCount]' derivation='Sum' name='[sum:categoryCount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[none:categories:nk]' value='144' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' />
+              <text column='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1qpepr41k3g6zo1coyiv90e72fgy].[none:categories:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{ED5A4014-35F1-4637-8B19-14642855480A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Sheet 1' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='9125' id='8' name='Sheet 1' pane-specification-id='0' param='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' type='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='11' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 1' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9125' id='8' name='Sheet 1' pane-specification-id='0' param='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' type='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{85DA3C0B-6B1E-4FAF-877A-1C9156B15CC0}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1qpepr41k3g6zo1coyiv90e72fgy].[sum:categoryCount:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{32715E46-9FC4-44E0-BE74-C19C8F2C2AA2}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{82207388-14AA-47F8-8280-C714D7B42C1D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      TkSuQmCC
+    </thumbnail>
+    <thumbnail height='45' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAAAtCAYAAAD4BmRbAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAExUlEQVR4nO3cf0zUdRzH8eehnPw6tNOOIxxgERNLrfVNw4YlKiaY1ChNiaE0BSpmU1FZ
+      ib+mzGoqmc1qNrAupwVGza1g5Y+VTr0m/mQmOnET5IrT7vyRx8n1B/4iUxwcgX3ej+3+uO99
+      Pu+9//i8dp/Pvt99dR6Px4MQivLp7AaE6EwSAKE0CYBQmgRAKE0CIJQmARBKkwAIpUkAhNIk
+      AEJpEgChNAmAUJoEQChNAiCUJgEQSpMACKVJAITSJABCaRIAoTQJgFCaBEAoTQIglCYBEEqT
+      AAilSQCE0iQAQmkSAKE0CYBQWvfWBlit1v+iDyE6hU5ejis60sDJyzq7hTuSLZBQmgRAKE0C
+      IJTW6iH4TmqKU0lZfbTFNX9jFAPHTmd+Tjyh7aouRLMQowHL4imEGA0trpfvrmJW4eYW1/pH
+      hLAkaxwv561rtW6gn759AWiWxArrIoYD4MJm/ZTcnDm8EfAlpZnR7S8vlGfuHcyh47UkzSzj
+      ssv9r2MMAX7kvjoSLSYc21lnqzW7d/Mhb8oYb2+B9Ji0TNLj4dTOvZz2bnGhqBBjMOfOX7rt
+      4gdIHj6Q/cdOk5z7CXsO17Ra8+FwE+beho44AzTwez34hvShFwAXOFKST0bSCGI1DU2LZcRL
+      syk+4Lg+o6Y4FU1bwA7AsaOAF+I0UotrADd1PxWQkRCHpmlocQlk5G/kpqlCAVF9+3CwuvaO
+      Y774fi8lWytpdF+5q5oDIs38dsrmjS3QDS5HNdsL81h1dDBvFo8kEIBz1NofYmrhbIZGBaN3
+      2ahYmkbeWx8RUz6PITd3UGMh5+1fMD3zIk9GBUFDGYvnVBC6pIS1Y034XKyj8qvlbD80kUHD
+      vNm56MoizEayU+JYOC2RJo8Hm93Jum93UbqtElfj3S34fwoxGqj7w+GNAGxhprbl+regAZNY
+      uiGH+L7XSocxalr6jeF6E6MnjueDLTupOg1DIq79cI6y9YeZuOkbEq+dnmvO4yCQ/mFG9AAB
+      oWjpq9Da37S4h8xdU8bcNWUA+PjoeKRfKIumJ2IMDmBt6c80tfFebr3d6Y0tUBIrrFasVz/b
+      1s/CXJaCFv8evwLUl5AdG0v6Gis219UpgUEE31KnF8nzl91Y/AAR6VisJUwNqGTT2tmkjYhF
+      i3sNy4nb7wXF/1tTk4eDx2vJXr6RYYMe5P77gtpUp97u5LHosA68D3DpLy4DHD3A3sZ40jM1
+      TPq2FNITHKUxIet9Pq+w8Hr4fj607PFur6LL0vt2I9Dv1oVj7BmITgfuK01tqnvk5Bmiw03e
+      DoCbi1UWVpfU0TtxJIMBzA8Qzi5+3GrHjQtHdQUF7xRx4m7K7VzN9JUVVDua/zrcrsu4AX+/
+      Ht5tW3RZvQwBFC1IY/IYjZ5B/vjodAzoZ2Zp1jh27DtOw58X2lT32CkbZxqc3j8D+BoieXz8
+      uxTlDGs+BEdPYuG0fczIT+CpfAMxo7PIzZ3CoYzy1ks/+hzP717JvOR8TjobwddA5NM5rMp8
+      ov1ti3uCze5kxoqvmTHhWWZOiqeHvju2s+f57LtdbChvflI5yL8HH+e9wqCosOvzslPiAJhV
+      uJny3VUkDI1hTtooUvOLqLc7cV9poqDoB3kaVHQseRpUiC7sb8joZZ/nrvGjAAAAAElFTkSu
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>

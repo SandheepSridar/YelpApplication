@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.0821.2225                               -->
+<workbook original-version='18.1' source-build='2019.3.0 (20193.19.0821.2225)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='yelp5_A' inline='true' name='federated.1fs83h916th2vz14xxqc11ptp2lw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='yelp5_A' name='semistructpassivestore-direct.1p6xowz07bgnir18ky9db0oshpy8'>
+            <connection class='semistructpassivestore-direct' directory='C:/Users/Sandheep Sridar/OneDrive/Desktop/Fall 2019/Adv DBMS/project' filename='yelp5_A.json' password='' server=''>
+              <semistruct-schemas>
+                <semistruct-schema table='[yelp5_A.json]'>
+                  <map key='{root}' value='true' />
+                </semistruct-schema>
+              </semistruct-schemas>
+            </connection>
+          </named-connection>
+        </named-connections>
+        <relation connection='semistructpassivestore-direct.1p6xowz07bgnir18ky9db0oshpy8' name='yelp5_A.json' table='[yelp5_A.json]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Document Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Document Index (generated)]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>Document Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>businessName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[businessName]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>businessName</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>city</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stars</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[stars]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>stars</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>state</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[zip]</local-name>
+            <parent-name>[yelp5_A.json]</parent-name>
+            <remote-alias>zip</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='float([Rating])' datatype='real' name='[Calculation_754071503295909889]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='float([rating])' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Document Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>Document Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Business Name' datatype='string' name='[businessName]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>businessName</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>city</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Rating' datatype='string' name='[rating]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>rating</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Stars' datatype='string' name='[stars]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>stars</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>state</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Zip' datatype='string' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>zip</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <folder name='yelp5 A' role='dimensions'>
+        <folder-item name='[Document Index (generated)]' type='field' />
+        <folder-item name='[businessName]' type='field' />
+        <folder-item name='[city]' type='field' />
+        <folder-item name='[rating]' type='field' />
+        <folder-item name='[stars]' type='field' />
+        <folder-item name='[state]' type='field' />
+        <folder-item name='[zip]' type='field' />
+      </folder>
+      <layout dim-ordering='alphabetic' dim-percentage='0.590659' measure-ordering='alphabetic' measure-percentage='0.409341' show-structure='false' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>TreeMap comparison (Average rating)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='yelp5_A' name='federated.1fs83h916th2vz14xxqc11ptp2lw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fs83h916th2vz14xxqc11ptp2lw'>
+            <column caption='float([Rating])' datatype='real' name='[Calculation_754071503295909889]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='float([rating])' />
+            </column>
+            <column-instance column='[Calculation_754071503295909889]' derivation='Avg' name='[avg:Calculation_754071503295909889:qk]' pivot='key' type='quantitative' />
+            <column caption='Business Name' datatype='string' name='[businessName]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>businessName</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[businessName]' derivation='None' name='[none:businessName:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='string' name='[rating]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>rating</run>
+                </formatted-text>
+              </desc>
+            </column>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[avg:Calculation_754071503295909889:qk]' />
+              <color column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[avg:Calculation_754071503295909889:qk]' />
+              <text column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:businessName:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{95D1B59A-8CF7-4054-9032-38601DDFBC3D}' />
+    </worksheet>
+    <worksheet name='yelp 5-1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Comparing businesses based on ratings</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='yelp5_A' name='federated.1fs83h916th2vz14xxqc11ptp2lw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fs83h916th2vz14xxqc11ptp2lw'>
+            <column caption='float([Rating])' datatype='real' name='[Calculation_754071503295582208]' role='measure' type='quantitative' user:unnamed='Sheet 1'>
+              <calculation class='tableau' formula='float([rating])' />
+            </column>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Business Name' datatype='string' name='[businessName]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>businessName</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Number of Records]' derivation='Count' name='[cnt:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[businessName]' derivation='None' name='[none:businessName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stars]' derivation='None' name='[none:stars:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='string' name='[rating]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>rating</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Stars' datatype='string' name='[stars]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>stars</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_754071503295582208]' derivation='Sum' name='[sum:Calculation_754071503295582208:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:businessName:nk]' value='292' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1fs83h916th2vz14xxqc11ptp2lw].[sum:Calculation_754071503295582208:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[sum:Calculation_754071503295582208:qk]' />
+              <text column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[sum:Calculation_754071503295582208:qk]' />
+              <lod column='[federated.1fs83h916th2vz14xxqc11ptp2lw].[cnt:Number of Records:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1fs83h916th2vz14xxqc11ptp2lw].[none:stars:nk] / [federated.1fs83h916th2vz14xxqc11ptp2lw].[none:businessName:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B75DBC54-6F40-487E-BD3A-B7A1F51848F8}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='yelp 5-1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fs83h916th2vz14xxqc11ptp2lw].[sum:Calculation_754071503295582208:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:businessName:nk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:city:nk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:rating:nk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:stars:nk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:state:nk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:zip:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{75D5BC76-2103-497C-B904-3288ED8D46C4}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fs83h916th2vz14xxqc11ptp2lw].[avg:Calculation_754071503295909889:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[avg:Calculation_754071503295909889:qk]</field>
+            <field>[federated.1fs83h916th2vz14xxqc11ptp2lw].[none:rating:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B559EF5E-56C6-4C48-947B-04692AA909DB}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAEIUlEQVR4nO3cS2+UZRjH4fsdGnoYeqAttFJqD2ICApK4UL6Ln8q9H8C1X8AlxugKiRoO
+      VhCKlgJTWtsZquNCqTQhgUTbxvyvazX3vJvnTeY388wzyTT9fr9fEKp11AuAoyQAog28PFy7
+      /mN9/d3do1oLHLj52ZO1Md7em/cF8NWNlfr082uHvig4LFcvL9WDhVN7sy0Q0V4ZQKvV1PR4
+      u8ZPDNXE6PC+awPHWvXhewt19dJiDRx7835Ojo7sm6fGRmrqpY8iOGzdzpP9W6AXRkcG6/Tk
+      aN1f69T5hZn68tuVev/cXG13e3Xz3lqtrK5Xe3iwJsfatTw3VddvP6jL75ypX59sVre3W1VV
+      vee7tTw3Xbd+Xquzpyfq6bPt+qPfr4tLs3X99oOaGBuppppa72wd6k3DC72Np68OoLO5U53N
+      h3vzsVarxtqDtXxmqm7eW9t7fmJ0uKYnTtRHFxfrm+/v1vmF2Wqav66NtYfq+e7vtXRmqn55
+      /KzmTo1XVb9Gho/X27OTdePO6oHeHLzO6PzS678DtIeO17n56apq6tHf79Y7vd3a3O5Wq2lq
+      c7tbP60+rivvnq320PFqNU2dGB6sO/cf1U5vtx6ub9R6Z6vWO1vVarWq29utzd+6B31v8Eaa
+      l38J/uSzL/7VKdBbU2O1ur7xnywMDsKBngJ58fN/4xiUaAIgmgCIJgCiCYBoAiCaAIgmAKIJ
+      gGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCi
+      CYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYA
+      ogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgm
+      AKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCI
+      JgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoA
+      iCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCa
+      AIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIg
+      mgCIJgCiDRz1AuAwtZqmPr4yvzcLgDgzE/88tgUimgCItb21JQByrfxwSwDkuvDBFQGQTQBE
+      EwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0A
+      RBMA0QRANAEQbd+/Q8/PTtbVS4tHtBQ4eBcWZ+rk4Mje/CdaE5XHZWb+mwAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+    <thumbnail height='87' name='yelp 5-1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
